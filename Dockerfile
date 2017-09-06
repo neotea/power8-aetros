@@ -38,7 +38,7 @@ RUN mkdir -m 0755 /data && chown nimbix:nimbix /data
 ENV LD_LIBRARY_PATH /usr/local/cuda/lib64/stubs
 
 # install git
-RUN sudo apt-get update && sudo apt-get install git
+RUN sudo apt-get -y update && sudo apt-get -y install git 
 # install bazel
 
 RUN git clone https://github.com/ibmsoe/bazel
