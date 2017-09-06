@@ -50,6 +50,19 @@ ENV JRE_HOME ${JAVA_HOME}/jre
 ENV CLASSPATH .:${JAVA_HOME}/lib:${JRE_HOME}/lib
 ENV PATH ${JAVA_HOME}/bin:$PATH
 
+
+
+#install protobuf
+
+RUN git clone https://github.com/google/protobuf && cd protobuf && git checkout -b 3.4.x && ./autogen.sh
+ENV LDFLAGS "-static" 
+RUN ./configure --prefix=/opt/DL/protobuf && \
+ sed -i "s/^LDFLAGS = -static/LDFLAGS = -all-static/g" src/Makefile && \
+ make && \
+ make install
+
+
+
 # install bazel
 
 RUN git clone https://github.com/ibmsoe/bazel
