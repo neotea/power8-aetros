@@ -40,6 +40,8 @@ ENV LD_LIBRARY_PATH /usr/local/cuda/lib64/stubs
 # install git
 RUN sudo apt-get -y update && sudo apt-get -y install git 
 
+# update java
+RUN sudo apt-get -y update && sudo apt-get -y install openjdk-8-jdk
 
 # configure java
 RUN echo $(update-alternatives --list java)
