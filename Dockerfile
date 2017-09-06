@@ -20,8 +20,8 @@ RUN mkdir -p /usr/lib/JARVICE && cp -a /tmp/image-common-master/tools /usr/lib/J
 # RUN cp -a /tmp/image-common-master/etc /etc/JARVICE && chmod 755 /etc/JARVICE && rm -rf /tmp/image-common-master
 # RUN mkdir -m 0755 /data && chown nimbix:nimbix /data
 
-# install git
-RUN sudo apt-get -y update && sudo apt-get -y install git 
+# install git & Co
+RUN sudo apt-get -y update && sudo apt-get -y install git libblas-dev liblapack-dev libatlas-base-dev gfortran
 
 # Install AETROS
 VOLUME /tmp
