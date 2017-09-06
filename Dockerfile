@@ -37,16 +37,6 @@ RUN mkdir -m 0755 /data && chown nimbix:nimbix /data
 # for building CUDA code later
 ENV LD_LIBRARY_PATH /usr/local/cuda/lib64/stubs
 
-# install open JDK
-
-RUN sudo add-apt-repository ppa:openjdk-r/ppa && sudo add-apt-repository -y ppa:openjdk-r/ppa && sudo apt-get update
-RUN sudo apt-get install openjdk-8-jdk
-RUN sudo update-alternatives --config java && sudo update-alternatives --config java --set /usr/lib/jvm/java-8-openjdk-ppc64el/jre/bin/java && sudo update-alternatives --set java /usr/lib/jvm/java-8-openjdk-ppc64el/jre/bin/java && RUN export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-ppc64el
- 
-RUN export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-ppc64el
-RUN export JRE_HOME=${JAVA_HOME}/jre
-RUN export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
-RUN export PATH=${JAVA_HOME}/bin:$PATH
 
 # install bazel
 
