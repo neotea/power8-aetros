@@ -43,7 +43,7 @@ RUN sudo apt-get -y update && sudo apt-get -y install git
 
 # configure java
 RUN echo $(update-alternatives --list java)
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-ppc64el
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-ppc64el/
 ENV JRE_HOME ${JAVA_HOME}/jre
 ENV CLASSPATH .:${JAVA_HOME}/lib:${JRE_HOME}/lib
 ENV PATH ${JAVA_HOME}/bin:$PATH
