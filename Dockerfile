@@ -27,5 +27,5 @@ RUN sudo apt-get -y update && sudo apt-get -y install git
 VOLUME /tmp
 WORKDIR /tmp
 USER nimbix
-RUN sudo pip3 install pip --upgrade && sudo pip3 install aetros --upgrade
+# RUN sudo pip3 install pip --upgrade && sudo pip3 install aetros --upgrade
 RUN sudo pip install pip --upgrade && sudo pip install aetros --upgrade
