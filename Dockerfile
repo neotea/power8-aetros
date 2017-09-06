@@ -56,7 +56,7 @@ ENV PATH ${JAVA_HOME}/bin:$PATH
 RUN sudo apt-get -y install autoconf autogen && sudo apt-get -y install libtool
 RUN git clone https://github.com/google/protobuf && cd protobuf && git checkout -b 3.4.x && ./autogen.sh
 ENV LDFLAGS "-static" 
-RUN ./configure --prefix=/opt/DL/protobuf && \
+RUN cd protobuf && ./configure --prefix=/opt/DL/protobuf && \
  sed -i "s/^LDFLAGS = -static/LDFLAGS = -all-static/g" src/Makefile && \
  make && \
  make install
