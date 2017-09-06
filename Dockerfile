@@ -42,11 +42,10 @@ RUN sudo apt-get -y update && sudo apt-get -y install git
 # install bazel
 
 RUN git clone https://github.com/ibmsoe/bazel
-RUN cd bazel
-RUN git checkout v0.2.0-ppc
+RUN cd bazel && git checkout v0.2.0-ppc && ./compile.sh
  
-Build bazel with the following command:
-RUN ./compile.sh
+# Build bazel with the following command:
+# RUN ./compile.sh
 
 # install tensorflow GPU
 RUN cd ..
