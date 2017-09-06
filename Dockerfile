@@ -18,7 +18,7 @@ RUN touch /etc/init.d/systemd-logind && apt-get -y install module-init-tools xz-
 EXPOSE 22
 RUN mkdir -p /usr/lib/JARVICE && cp -a /tmp/image-common-master/tools /usr/lib/JARVICE
 RUN cp -a /tmp/image-common-master/etc /etc/JARVICE && chmod 755 /etc/JARVICE && rm -rf /tmp/image-common-master
-RUN mkdir -m 0755 /data && chown nimbix:nimbix /data
+RUN chown nimbix:nimbix /data
 RUN sed -ie 's/start on.*/start on filesystem/' /etc/init/ssh.conf
 
 
