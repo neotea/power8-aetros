@@ -4,9 +4,10 @@ MAINTAINER AETROS
 ENV DEBIAN_FRONTEND noninteractive
 
 # Nimbix
+
+RUN apt-get -y update && apt-get -y install zip unzip openssh-server ssh infiniband-diags perftest libibverbs-dev libmlx4-dev libmlx5-dev sudo iptables curl wget vim python
 ADD https://github.com/nimbix/image-common/archive/master.zip /tmp/nimbix.zip
 WORKDIR /tmp
-RUN apt-get update && apt-get -y install zip unzip openssh-server ssh infiniband-diags perftest libibverbs-dev libmlx4-dev libmlx5-dev sudo iptables curl wget vim python && apt-get clean
 RUN unzip nimbix.zip && rm -f nimbix.zip
 RUN /tmp/image-common-master/setup-nimbix.sh
 
