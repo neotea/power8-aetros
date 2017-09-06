@@ -66,7 +66,7 @@ RUN cd protobuf && ./configure --prefix=/opt/DL/protobuf && \
 # install bazel
 
 RUN git clone https://github.com/ibmsoe/bazel
-RUN cd bazel && git checkout v0.4.5-CI-ppc && ./compile.sh
+RUN cd bazel && git checkout v0.3.0-ppc && ./compile.sh
  
 # Build bazel with the following command:
 # RUN ./compile.sh
